@@ -30,4 +30,9 @@ export const GlobalStyled = createGlobalStyle`
     --color-sucess: #3FE864;
     --color-negative: #E83F5B;
   }
+
+  .container{
+    width: 90%;
+    margin: 0 auto;
+  }
 `
