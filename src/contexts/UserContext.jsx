@@ -26,8 +26,8 @@ export function UserProvider({ children }) {
               authorization: `Bearer ${token}`,
             },
           });
-
           setUser(data);
+          navigate("/dashboard")
         } catch (error) {
           console.error(error);
         } finally {

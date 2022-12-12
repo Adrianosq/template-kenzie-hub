@@ -11,7 +11,7 @@ Modal.setAppElement("#root");
 export function TechListCard({ tech }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const { register, handleSubmit } = useForm({});
-  const { setIdTech, updateTech} = useContext(TechContext)
+  const { setIdTech, updateTech, deleteTech } = useContext(TechContext);
 
   function openModal(tech) {
     setModalIsOpen(true);
@@ -55,12 +55,14 @@ export function TechListCard({ tech }) {
             <option value="Intermediário">Intermediário</option>
             <option value="Avançado">Avançado</option>
           </select>
-          <button className="buttonRegister" type="submit">
-            Salvar alterações
-          </button>
-          {/* <button type="button" onClick={deleteTech}>
-            Excluir
-          </button> */}
+          <div>
+            <button className="buttonRegister" type="submit">
+              Salvar alterações
+            </button>
+            <button className="buttonDelete" type="button" onClick={deleteTech}>
+              Excluir
+            </button>
+          </div>
         </StyledFormTech>
       </Modal>
     </StyledTechListCard>

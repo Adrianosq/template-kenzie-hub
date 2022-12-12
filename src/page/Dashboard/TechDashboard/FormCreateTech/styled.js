@@ -59,4 +59,15 @@ export const StyledFormTech = styled.form`
         
         cursor: pointer;
     }
+
+    .buttonDelete{
+        background-color: var(--color-gray-1);
+        width: 78px;
+        height: 48px;
+        border: 1px solid var(--color-gray-1);
+        border-radius: 4px;
+        margin-left: 20px;
+        
+        cursor: pointer;
+    }
 `

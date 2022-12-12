@@ -33,19 +33,19 @@ export function TechProvider({ children }) {
 
   async function deleteTech() {
     try {
-      const response = await api.delete(`/users/works/${idTech}`, {
+      const response = await api.delete(`/users/techs/${idTech}`, {
         headers: {
           authorization: `Bearer ${token}`,
         },
       });
-      console.log(response);
+      toast.success('Tecnologia deletada com sucesso!')
     } catch (error) {
-      console.log(error);
+      toast.error(error.response.error.message)
     }
   }
 
   return (
-    <TechContext.Provider value={{ modalIsOpen, openModal, closeModal, tech, setTech, idTech, setIdTech, updateTech}}>
+    <TechContext.Provider value={{ modalIsOpen, openModal, closeModal, tech, setTech, idTech, setIdTech, updateTech, deleteTech}}>
       {children}
     </TechContext.Provider>
   );
